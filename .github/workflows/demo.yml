@@ -1,0 +1,16 @@
+name: Demo Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Failing test
+        run: |
+          echo "Test 1: PASS"
+          echo "Test 2: FAIL"
+          exit 1
